@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <h1 style="color: #ffffff;">Game Quiz - Chọn đáp án đúng</h1>
+  <input type="file" id="fileInput" accept=".xlsx,.xls" />
+
+  <div id="game">
+    <div class="info">
+      Tổng số câu: <span id="totalQ"></span> | Điểm: <span  id="score">0</span>
+    </div>
+    <h2 id="question"></h2>
+    <div id="questionImage"></div> <!-- 🔹 ảnh minh họa sẽ hiển thị ở đây -->
+    <div id="answers"></div>
+    <button id="confirm">Xác nhận</button>
+    <button id="next">Tiếp theo</button>
+  </div>
+
+  <!-- Popup kết quả -->
+  <div id="popup">
+    <div class="popup-content">
+      <h2>Kết quả</h2>
+      <p id="finalScore"></p>
+      <p id="comment"></p>
+      <button id="replay">Chơi lại</button>
+    </div>
+  </div>
+
+  <!-- Âm thanh -->
+  <!-- <audio id="correctSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="wrongSound" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg"></audio> -->
+  <audio id="correctSound" src="sounds/true.mp3" preload="auto"></audio>
+<audio id="wrongSound" src="sounds/error.mp3" preload="auto"></audio>
+</div>
+</body>
+<script src="./index.js"></script>
+</html>

@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eee;
+    text-align: center;
+    background-image: url(./images/pngtree-what-can-a-home-computer-desk-look-like-image_2570265.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game {
+    display: none;
+    background-color: rgba(255, 255, 255,0.9);
+    padding: 20px;
+    border-radius: 12px;
+    width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+input{
+    background-color: #ffffff; 
+    border-radius: 5px; 
+    padding:5px
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.info {
+    margin-bottom: 15px;
+    font-weight: bold;
+        border-radius: 5px;
+    padding: 10px;
+    background: rgb(86, 42, 244);
+    display: inline-block;
+    max-width: 500px;
+    color: white;
+}
+#answers{
+     display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cột */
+  gap: 10px; /* khoảng cách giữa các ô */
+  margin-top: 20px;
+}
+.answer {
+    display: block;
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answer:hover {
+    background: #dbef77;
+}
+.answer.correct {
+ background-color: #4CAF50;  /* màu gốc */
+  color: #fff;
+  border-radius: 6px;
+  animation: blinkCorrect 0.8s ease-in-out 3 forwards;
+}
+
+@keyframes blinkCorrect {
+  0%, 100% { background-color: #4CAF50; }  /* giữ màu gốc */
+  50%      { background-color: #9ef413; }  /* xanh lá nhạt hơn */
+}
+
+.answer.wrong {
+    background: #c61414 !important;
+    color: white;
+}
+#question{
+     max-height: 60px;   /* Giới hạn chiều cao, bạn chỉnh tùy ý */
+  overflow-y: auto;    /* Thêm thanh scroll dọc khi quá dài */
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+#questionImage {
+  display: flex;
+  justify-content: center; /* căn ngang */
+  align-items: center;     /* căn dọc (nếu có chiều cao) */
+  margin: 10px 0;
+}
+#questionImage img {
+  width: 200px;        /* cố định chiều rộng */
+  height: 150px;       /* cố định chiều cao */
+  object-fit: cover;   /* cắt ảnh vừa khung mà không bị méo */
+  border-radius: 8px;  /* bo góc cho đẹp, tuỳ chỉnh */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: block;
+  margin: 0 auto;      /* căn giữa */
+  text-align: center;
+}
+#question:hover{
+    cursor: pointer;
+}
+/* scroll */
+/* Thanh cuộn dọc */
+::-webkit-scrollbar {
+  width: 5px;         /* Chiều rộng thanh cuộn */
+}
+
+/* Track (phần nền của thanh cuộn) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+
+/* Handle (phần có thể kéo) */
+::-webkit-scrollbar-thumb {
+  background: #e9e6e6;
+  border-radius: 10px;
+}
+
+/* Handle khi hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e7e5e5;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#confirm {
+    background: #4CAF50;
+    color: white;
+}
+
+#next {
+    background: #3498db;
+    color: white;
+}
+#complete{
+     background: #3498db;
+    color: white;
+    display: none;
+}
+
+/* popup */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#popup h2 {
+    margin-bottom: 10px;
+}
+
+#popup button {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.option.correct {
+    background-color: #4CAF50 !important;
+    /* xanh */
+    color: white;
+}
+
+.option.wrong {
+    background-color: #e21608 !important;
+    /* đỏ */
+    color: white;
+}
