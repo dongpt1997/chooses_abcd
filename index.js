@@ -100,9 +100,9 @@ function showQuestion(q) {
 
   document.getElementById('confirm').style.display = "inline-block";
   if (availableQuestions.length === 1) {
-    document.getElementById('next').innerText = "Hoàn thành";
+    document.getElementById('next').innerText = "完成";
   } else {
-    document.getElementById('next').innerText = "Tiếp theo";
+    document.getElementById('next').innerText = "下一句";
   }
 }
 
@@ -110,7 +110,7 @@ function showQuestion(q) {
 
 document.getElementById('confirm').onclick = () => {
   if (selectedAnswer === null) {
-    alert("Hãy chọn một đáp án!");
+    alert("请选择答案!");
     return;
   }
   const q = questions[currentQ];
@@ -152,8 +152,8 @@ function removeFromAvailable(qIndex) {
 
 function finishGame() {
   document.getElementById('popup').style.display = "flex";
-  document.getElementById('finalScore').innerText = "Điểm của bạn: " + score;
-  document.getElementById('comment').innerText = score < 20 ? "Cố lên 💪" : "Phát huy hơn nữa 🚀";
+  document.getElementById('finalScore').innerText = "你的分: " + score;
+  document.getElementById('comment').innerText = score < 20 ? "加油 💪" : "进一步发挥 🚀";
 }
 
 document.getElementById('replay').onclick = () => {
