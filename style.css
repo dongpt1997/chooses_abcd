@@ -259,8 +259,9 @@ button:active::before {
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    width: 300px;
+    width: 400px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
 }
 
 #popup h2 {

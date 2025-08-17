@@ -152,8 +152,37 @@ function removeFromAvailable(qIndex) {
 
 function finishGame() {
   document.getElementById('popup').style.display = "flex";
-  document.getElementById('finalScore').innerText = "你的分: " + score;
+  document.getElementById('finalScore').innerText = "总分数: " + score;
   document.getElementById('comment').innerText = score < 20 ? "加油 💪" : "进一步发挥 🚀";
+  // bắn pháo giấy khi hiện popup
+  confetti({
+    particleCount: 150,
+    spread: 120,
+    origin: { y: 0.6 }
+  });
+
+  // nếu muốn mưa pháo giấy trong vài giây:
+  let duration = 5 * 1000; // 2 giây
+  let end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
 }
 
 document.getElementById('replay').onclick = () => {
